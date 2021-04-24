@@ -1,5 +1,5 @@
 <script>
-	import Counter from '$lib/Counter.svelte';
+	import Members from '$lib/Members.svelte';
 
 	var index = 0;
 
@@ -81,6 +81,9 @@ for (let i = 0;i &lt; 123;i=i+1) &#123;
 			</label>
 		</div>
 	</form>
+
+  <Members />
+
 </main>
 
 <style>
