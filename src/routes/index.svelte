@@ -1,6 +1,6 @@
 <script>
 	import Carousel from '$lib/Carousel.svelte';
-	import Form from '$lib/form.svelte';
+	import Form from '$lib/Form.svelte';
 	import Members from '$lib/Members.svelte';
 </script>
 
