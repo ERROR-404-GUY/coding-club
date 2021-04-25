@@ -1,16 +1,28 @@
 <script>
+	import { db } from '../firebase';
+
 	var submited = false;
-    var submited = false;
+	var submited = false;
 	function onFormSubmit(event) {
 		event.preventDefault();
-		submited = true;
-		console.log(event.target.name.value);
-		console.log(event.target.class.value);
-    }
+		db.collection('applications')
+			.doc()
+			.set({
+				name: event.target.name.value,
+				class: event.target.class.value,
+				accepted: false
+			})
+			.then(function () {
+				submited = true;
+                console.log('submitted')
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+	}
 </script>
 
 <form on:submit={onFormSubmit}>
-    
 	<div>
 		<label for="name-input">Your name</label>
 		<input id="name-input" name="name" placeholder="name" autocomplete="off" required />
@@ -43,6 +55,7 @@
 	</div>
 </form>
 
+
 <style>
 	form {
 		border: rgb(72, 255, 0) solid;
@@ -64,9 +77,9 @@
 		font-size: 4vmax;
 		margin: 2vmax;
 	}
-    p {
+	p {
 		text-align: center;
 		color: rgb(255, 255, 255);
-        font-size: 4vmax;
+		font-size: 4vmax;
 	}
 </style>

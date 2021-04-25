@@ -33,6 +33,7 @@
 
 	<p>if you would like to join my club pls put your name on the boxes below⬇️</p>
 	<Form />
+	<p>here is a list of people who have joined and been accepted</p>
 	<Members />
 </main>
 
