@@ -4,11 +4,15 @@ const pkg = require('./package.json');
 /** @type {import('@sveltejs/kit').Config} */
 module.exports = {
 	kit: {
-		adapter: static({
-			// default options are shown
-			pages: 'build',
-			assets: 'build',
-			fallback: null
-		})
+		adapter: static(),
+
+		// hydrate the <div id="svelte"> element in src/app.html
+		target: '#svelte',
+
+		vite: {
+			ssr: {
+				noExternal: Object.keys(pkg.dependencies || {})
+			}
+		}
 	}
 };

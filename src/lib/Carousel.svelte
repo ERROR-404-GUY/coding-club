@@ -1,6 +1,5 @@
 <script>
-	import { object_without_properties } from 'svelte/internal';
-import { fade, blur, fly, crossfade, draw, scale, slide } from 'svelte/transition';
+import { slide } from 'svelte/transition';
 
 	var index = 0;
 
