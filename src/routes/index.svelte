@@ -42,7 +42,7 @@
 		font-size: 4vmax;
 		padding: 1em;
 		margin: 0 auto;
-		background: url('stuff.png') no-repeat;
+		background: url('/stuff.png') no-repeat;
 		background-attachment: fixed;
 	}
 
