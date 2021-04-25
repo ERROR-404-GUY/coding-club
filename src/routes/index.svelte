@@ -1,6 +1,7 @@
 <script>
 	import Carousel from '$lib/Carousel.svelte';
 	import Form from '$lib/form.svelte';
+	import Members from '$lib/Members.svelte';
 </script>
 
 <svelte:head>
@@ -32,11 +33,10 @@
 
 	<p>if you would like to join my club pls put your name on the boxes below⬇️</p>
 	<Form />
+	<Members />
 </main>
 
 <style>
-	div {
-	}
 	main {
 		font-size: 4vmax;
 		padding: 1em;
@@ -133,7 +133,6 @@
 			100% {
 				color: #ff0000;
 			}
-
 		}
 
 		p {
