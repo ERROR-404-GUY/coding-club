@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "weibeau-code"
+  },
+  "targets": {
+    "weibeau-code": {
+      "hosting": {
+        "codingclub": [
+          "codingclub"
+        ]
+      }
+    }
   }
 }
