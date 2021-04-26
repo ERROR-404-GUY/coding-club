@@ -44,6 +44,7 @@
 		margin: 0 auto;
 		background: url('/stuff.png') no-repeat;
 		background-attachment: fixed;
+		background-size: cover;
 	}
 
 	:global(button) {

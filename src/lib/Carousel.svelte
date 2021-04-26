@@ -65,6 +65,7 @@ import { slide } from 'svelte/transition';
 	.carousel {
 		position: relative;
 		height: 50vmax;
+		overflow: hidden;
 	}
 	.carousel button {
 		position: absolute;
