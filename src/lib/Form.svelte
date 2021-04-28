@@ -2,7 +2,6 @@
 	import { db } from '../firebase';
 
 	var submited = false;
-	var submited = false;
 	function onFormSubmit(event) {
 		event.preventDefault();
 		db.collection('applications')
@@ -10,11 +9,11 @@
 			.set({
 				name: event.target.name.value,
 				class: event.target.class.value,
-				accepted: false
+				level: event.target.level.value,
+				accepted: true
 			})
 			.then(function () {
 				submited = true;
-                console.log('submitted')
 			})
 			.catch(function (error) {
 				console.log(error);
@@ -24,8 +23,10 @@
 
 <form on:submit={onFormSubmit}>
 	<div>
-		<label for="name-input">Your name</label>
-		<input id="name-input" name="name" placeholder="name" autocomplete="off" required />
+		<label for="name-input"
+			>Your name
+			<input id="name-input" name="name" placeholder="name" autocomplete="off" required />
+		</label>
 	</div>
 	<div>
 		<label>
@@ -42,11 +43,25 @@
 				<option value="G4-8">G4-8</option>
 				<option value="G4-9">G4-9</option>
 			</select>
-			{#if submited}
-				<p>welcome to the club!</p>
-				<p>meet at 4-8 mr grewalls class every friday afternoon recess!</p>
-			{/if}
 		</label>
+		<label>
+			your level:
+			<select name="level" required>
+				<option value="">(Please be honest)</option>
+				<option value="0">0</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+		</label>
+
+		{#if submited}
+			<p>welcome to the club!</p>
+			<p>meet at 4-8 mr grewalls class every friday afternoon recess!</p>
+		{/if}
+
 		{#if !submited}
 			<div class="join">
 				<button type="submit">join</button>
@@ -55,8 +70,16 @@
 	</div>
 </form>
 
-
 <style>
+	label {
+		display: block;
+		color: royalblue;
+	}
+	select[name='level'] {
+		background-color: rgb(255, 153, 0);
+		font-size: 4vmax;
+		margin: 2vmax;
+	}
 	form {
 		border: rgb(72, 255, 0) solid;
 	}
