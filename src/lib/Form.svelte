@@ -10,7 +10,7 @@
 				name: event.target.name.value,
 				class: event.target.class.value,
 				level: event.target.level.value,
-				accepted: true
+				accepted: false
 			})
 			.then(function () {
 				submited = true;
