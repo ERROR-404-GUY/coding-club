@@ -9,7 +9,7 @@
 			.set({
 				name: event.target.name.value,
 				class: event.target.class.value,
-				level: event.target.level.value,
+				level: parseInt(event.target.level.value, 10),
 				accepted: false
 			})
 			.then(function () {
@@ -48,12 +48,12 @@
 			your level:
 			<select name="level" required>
 				<option value="">(Please be honest)</option>
-				<option value=0>0</option>
-				<option value=1>1</option>
-				<option value=2>2</option>
-				<option value=3>3</option>
-				<option value=4>4</option>
-				<option value=5>5</option>
+				<option value="0">0</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
 			</select>
 		</label>
 
